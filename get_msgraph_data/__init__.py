@@ -2,7 +2,7 @@ import logging,requests,os
 import azure.functions as func
 
 async def main(req: func.HttpRequest) -> func.HttpResponse:
-    logging.info('Python HTTP trigger function processed a request.')
+    logging.info('Python HTTP trigger function processed a request {}'.format(req))
     try:
             endpoint= req.get_json()['endpoint']
             logging.info(endpoint)
